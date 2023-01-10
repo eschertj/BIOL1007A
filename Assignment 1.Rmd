@@ -1,0 +1,16 @@
+---
+title: "Assignment 1"
+author: "Jack Eschert"
+date: "2023-01-10"
+output: html_document
+---
+git status  
+git add -A  
+got commit -am  
+git push  
+
+
+
+`## this is where I can put anything`  
+
+**this is where I can put anything**   

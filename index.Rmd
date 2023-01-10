@@ -9,7 +9,7 @@ output:
 ---
 
 ## Assignments 
-[Assignment 1](Assignment_1.html)
+[Assignment 1](Assignment-1.html)
 
 
 [Website link](https://www.amazon.com)
