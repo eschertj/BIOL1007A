@@ -1,0 +1,67 @@
+---
+title: "Weekly Assignment 1"
+author: "Jack Eschert"
+date: "2023-01-17"
+output: html_document
+---
+# **How to create a GitHub webpage via R Markdown on Mac**  
+
+## *Overview of Process*
+* We will breakdown the overall website creation process into 2 main categorical steps
+  + Required Software Installation Steps
+  + Steps within R Studio
+* A GitHub webpage requires the installation of 5 softwares (listed in order of installation).  
+  + R version 4.2.2.  
+  + R Studio
+  + Xcode Command Line Tools (not the Xcode application itself). 
+  + HomeBrew.  
+  + Git. 
+  + After Git installation, you'll need to make a GitHub account
+  + For best practice, ensure your Mac operating system is up to date prior to these installations. 
+  + There are multiple ways to install Git (the key software for GitHub), but the general view is that the provided HomeBrew and Xcode method is the most streamlined process. 
+  + HomeBrew and Xcode Command Line Tools facilitate the installation of Git onto your computer 
+
+# **Required Software Installation Steps**
+1. First, install R
++ This is the software your computer requires to use R Markdown, a feature of the next software we'll install (R Studio)
++ Navigate to the URL: (https://cran.rstudio.com/)
++ Follow the displayed instructions and drag R into your applications folder on your Mac once it's installed
+2. Next, download R Studio via the URL (https://download1.rstudio.org/electron/macos/RStudio-2022.12.0-353.dmg)
++ Follow the provided instructions in a similar manner to how you installed R
+3. Now, you'll need to install Xcode Command Line Tools via the URL: https://download.developer.apple.com/Developer_Tools/Command_Line_Tools_for_Xcode_14.2/Command_Line_Tools_for_Xcode_14.2.dmg 
++ Note, you may be prompted to log in via your Apple ID
++ Simply follow the provided instructions 
+2. Once Xcode is installed, then install HomeBrew 
++ Navigate to this URL: https://brew.sh/ 
++ Paste this page's provided code into your Mac's terminal:  
+`/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
++ The terminal can be found in the Applications section under Finder on your Mac
+3. Now you're ready to install Git, navigate to this URL: https://git-scm.com/download/mac
++ Paste the provided code into your computer's terminal:
+`brew install git`
+4. Create an online account on GitHub: https://github.com/ 
++ You've now completed the prerequisite software installation steps, now let's move on to R Studio!
+
+# **Steps within R Studio**. 
+### *Package Installations*
+1. Open R Studio and navigate to the upper right hand quadrant of your screen under the tab labeled "console"
++ Think of the console as the facilitator in communication between your computer and the R software itself 
++ R Studio is merely a platform for you to easily work with both your computer (via its terminal) and R
++ If your R Studio display does not mimic this description, navigate to the tools tab, select global options, then select Pane Layout on the resultant page and adjust accordingly 
+2. Install the following packages on R Studio via the `install.packages()` function in the console section:
++ `install.packages(rmarkdown)`
++ `install.packages(tinytex)`
++ R Markdown is what we'll be using to make webpages and tinytex is the package that lets us create PDFs (more on that later). 
+
+### *Creating an Initial Repository*
+1. Now, we're going to link GitHub to R Studio by creating a Repository, first navigate to https://github.com/. 
+2. On the left hand section, click *New* under the *Repositories* section
+3. Select *MIT License* and *Create Repository*
+4. On the Notes application on your Mac paste the generated URL that GitHub provides, you'll need this later
+5. Back in R Studio, create select the *File* tab, *New Project*, *Version Control*, *Git* 
++ This step confirms successful installation of Git if a check box appears for "open in new session"
+6. Paste the URL from your Notes sheet into *Repository URL*, then enter the **same name** for *Project Directory Name* as you did for the *Repository Name* on GitHub.
+7. Select the desired save location for this project under *Create project as subdirectory of:*
++ I recommend saving the projects to your Desktop for ease 
+8. You've now created a repository which will allow you to work with all your files in one place 
+
