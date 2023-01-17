@@ -1,0 +1,39 @@
+---
+title: "Assignment 4"
+author: "Jack Eschert"
+date: "2023-01-17"
+output: html_document
+---
+1.
+1a.
+```{r}
+n_dims <-sample(3:10, 1)
+n_dims
+vector <- seq(1:(n_dims)^2)
+vector
+```
+
+1b.
+```{r}
+sample(vector)
+```
+
+1c.
+```{r}
+matrix <- matrix(data = vector, nrow = 4, ncol = 4)
+matrix
+```
+1d. 
+```{r}
+print(matrix)
+```
+1e. 
+```{r}
+t(matrix)
+```
+1f. 
+```{r}
+print(matrix)
+```
+
+
