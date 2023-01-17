@@ -13,4 +13,6 @@ output:
 
 [Assignment 2](Assignment-2.html)  
 
-[Website link](https://www.amazon.com)
+[Assignment 3](Assignment-3.html)
+
+[Weekly Assignment](Weekly-Assignment-1.html)
