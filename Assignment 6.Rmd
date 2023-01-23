@@ -1,0 +1,57 @@
+---
+title: "Assignment 6"
+author: "Jack Eschert"
+date: "2023-01-23"
+output: html_document
+---
+
+1. 
+```{r}
+library(tidyverse)
+str(iris)
+view(iris)
+```
+2. 
+```{r}
+data(iris)
+iris1 <- filter(iris, Species == c("virginica", "versicolor") & Sepal.Width>2.5 & Sepal.Length>6)
+iris1
+```
+3. 
+```{r}
+iris2 <- select(iris1, -c(Petal.Length, Petal.Width))
+str(iris2)
+```
+4. 
+```{r}
+iris3 <- arrange(iris2, by=desc(Sepal.Length))
+head(iris3)
+```
+5. 
+```{r}
+iris4 <- mutate(iris3, Sepal.Area=Sepal.Length*Sepal.Width)
+str(iris4)
+```
+6.
+```{r}
+irisTab <- summarize(iris4, Average.Sepal.Length = mean(Sepal.Length), Average.Sepal.Width=mean(Sepal.Width), TotalNumber=n())
+irisTab
+```
+7. 
+```{r}
+IrisSpecies <- group_by(iris4, Species)
+iris5 <- summarize(IrisSpecies, Average.Sepal.Length = mean(Sepal.Length), Average.Sepal.Width=mean(Sepal.Width), TotalNumber=n())
+print(iris5)
+```
+8.
+```{r}
+irisFinal <- iris %>%
+  filter(Species == c("virginica", "versicolor") & Sepal.Width>2.5 & Sepal.Length>6) %>%
+  select(-c(Petal.Length, Petal.Width)) %>%
+  arrange(by=desc(Sepal.Length)) %>%
+  mutate(Sepal.Area=Sepal.Length*Sepal.Width) %>%
+  group_by(Species) %>%
+  summarize(Average.Sepal.Length = mean(Sepal.Length), Average.Sepal.Width=mean(Sepal.Width), TotalNumber=n())
+irisFinal
+```
+
