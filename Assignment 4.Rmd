@@ -20,7 +20,7 @@ sample(vector)
 
 1c.
 ```{r}
-matrix <- matrix(data = vector, nrow = 4, ncol = 4)
+matrix <- matrix(data = vector, nrow = n_dims, ncol = n_dims)
 matrix
 ```
 1d. 
@@ -36,4 +36,17 @@ t(matrix)
 print(matrix)
 ```
 
+1g
+```{r}
+matrix[1,]
+sum(matrix[1,]) 
+matrix[n_dims,]
+sum(matrix[n_dims,]) 
+sum(matrix[1,], matrix[n_dims,]) 
+```
+
+1h
+```{r}
+print(matrix)
+```
 

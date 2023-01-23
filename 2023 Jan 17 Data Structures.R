@@ -300,15 +300,15 @@ zMat[3,3]
 zDFrame[3,3]
 
 # All rows but just 3rd column
-zMat[,3]
-zDFrame[,3]
-zDFrame$V3
+zMat[,3]. 
+zDFrame[,3]. 
+zDFrame$V3. 
 zDFrame["V3"]
 # the " " also work but $ is better 
 
 # 3rd row of matrix and data frame
-zMat[3,]
-zDFrame[3,]
+zMat[3,]. 
+zDFrame[3,].  
 
 # matrix is a vector therefore its 3rd element is a single element, a data frame is a list therefore its 3rd element is the entire 3rd column
 zMat[3]
@@ -353,5 +353,5 @@ m[complete.cases(m),]
 m[complete.cases(m[,c(1:2)]),]
 # without the last comma it'll just return the vector, adding it returns a matrix, it looks at matrix and focuses on first 2 columns and end with comma to get all columns that meet that condition, 
 # we're giving it a subset matrix that's within the condition of the first 2 columns, we didn't specify column 4 since it contains an NA
-# helpful for analysizng data in just 2 columns but you want to tell the complete story
+# helpful for analysis data in just 2 columns but you want to tell the complete story
 

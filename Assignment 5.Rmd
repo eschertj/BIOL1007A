@@ -1,0 +1,64 @@
+---
+title: "Assignment 5"
+author: "Jack Eschert"
+date: "2023-01-19"
+output: html_document
+---
+
+2. 
+
+2a.
+```{r}
+my_matrix <- matrix(data = runif(16), nrow=4, ncol=4)
+print(my_matrix)
+
+my_vector <- runif(100)
+my_vector > 0.5 
+my_logical <- my_vector > 0.5 
+my_logical
+
+my_letters <- sample(letters)
+my_letters
+
+my_list <- list(my_matrix, my_logical, my_letters)
+my_list
+```
+2b. 
+```{r}
+new_list <- list(my_matrix[[2,2]], my_logical[2], my_letters[2])
+new_list
+```
+2c. 
+```{r}
+new_list
+
+typeof(new_list[[1]])
+typeof(new_list[[2]])
+typeof(new_list[[3]])
+```
+2d. 
+```{r}
+new_vector <- c(new_list[[1]], new_list[[2]], new_list[[3]])
+new_vector
+```
+2e.
+```{r}
+class(new_vector)
+```
+
+3. 
+```{r}
+my_unifs <- runif(26, min=0, max=10)
+my_unifs
+upper <- toupper(letters)
+my_letters <- sample(upper)
+my_letters
+typeof(my_unifs)
+
+dFrame <- data.frame(my_unifs, my_letters)
+dFrame
+nrow(dFrame)
+dFrame[sample(1:nrow(dFrame), 4), 1] <- NA
+dFrame
+```
+
