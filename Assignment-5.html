@@ -363,81 +363,81 @@ display: none;
 <p>2a.</p>
 <pre class="r"><code>my_matrix &lt;- matrix(data = runif(16), nrow=4, ncol=4)
 print(my_matrix)</code></pre>
-<pre><code>##           [,1]       [,2]      [,3]      [,4]
-## [1,] 0.7672814 0.09900542 0.6706234 0.6730062
-## [2,] 0.6625026 0.62433376 0.5647866 0.4187497
-## [3,] 0.3048225 0.72599234 0.1907080 0.3847068
-## [4,] 0.6957842 0.56714211 0.7182982 0.1377028</code></pre>
+<pre><code>##           [,1]      [,2]       [,3]      [,4]
+## [1,] 0.2771800 0.3717226 0.49380343 0.3266357
+## [2,] 0.8360485 0.3388670 0.46884813 0.6685082
+## [3,] 0.4315547 0.3675805 0.08008885 0.4269923
+## [4,] 0.1511688 0.1899667 0.26153252 0.9428337</code></pre>
 <pre class="r"><code>my_vector &lt;- runif(100)
 my_vector &gt; 0.5 </code></pre>
-<pre><code>##   [1]  TRUE FALSE  TRUE FALSE  TRUE FALSE FALSE  TRUE  TRUE  TRUE  TRUE FALSE
-##  [13]  TRUE  TRUE FALSE FALSE  TRUE  TRUE  TRUE FALSE FALSE  TRUE FALSE  TRUE
-##  [25]  TRUE  TRUE  TRUE  TRUE  TRUE FALSE  TRUE FALSE  TRUE  TRUE  TRUE  TRUE
-##  [37]  TRUE  TRUE FALSE  TRUE  TRUE  TRUE  TRUE FALSE  TRUE  TRUE FALSE  TRUE
-##  [49]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE FALSE  TRUE  TRUE FALSE FALSE  TRUE
-##  [61]  TRUE  TRUE FALSE FALSE FALSE  TRUE  TRUE FALSE FALSE FALSE  TRUE  TRUE
-##  [73] FALSE FALSE  TRUE FALSE FALSE  TRUE  TRUE  TRUE  TRUE FALSE  TRUE  TRUE
-##  [85]  TRUE  TRUE  TRUE  TRUE FALSE FALSE FALSE  TRUE  TRUE FALSE  TRUE FALSE
-##  [97]  TRUE  TRUE FALSE FALSE</code></pre>
+<pre><code>##   [1] FALSE FALSE  TRUE FALSE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE FALSE  TRUE
+##  [13] FALSE FALSE FALSE  TRUE FALSE  TRUE  TRUE FALSE FALSE FALSE  TRUE  TRUE
+##  [25]  TRUE  TRUE  TRUE FALSE FALSE FALSE  TRUE  TRUE  TRUE FALSE FALSE  TRUE
+##  [37]  TRUE FALSE FALSE  TRUE  TRUE FALSE  TRUE  TRUE FALSE  TRUE  TRUE  TRUE
+##  [49]  TRUE FALSE FALSE FALSE  TRUE  TRUE FALSE  TRUE FALSE FALSE  TRUE  TRUE
+##  [61] FALSE  TRUE FALSE  TRUE  TRUE  TRUE  TRUE FALSE  TRUE FALSE FALSE  TRUE
+##  [73] FALSE FALSE FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE FALSE  TRUE
+##  [85]  TRUE  TRUE  TRUE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE  TRUE FALSE
+##  [97]  TRUE FALSE FALSE  TRUE</code></pre>
 <pre class="r"><code>my_logical &lt;- my_vector &gt; 0.5 
 my_logical</code></pre>
-<pre><code>##   [1]  TRUE FALSE  TRUE FALSE  TRUE FALSE FALSE  TRUE  TRUE  TRUE  TRUE FALSE
-##  [13]  TRUE  TRUE FALSE FALSE  TRUE  TRUE  TRUE FALSE FALSE  TRUE FALSE  TRUE
-##  [25]  TRUE  TRUE  TRUE  TRUE  TRUE FALSE  TRUE FALSE  TRUE  TRUE  TRUE  TRUE
-##  [37]  TRUE  TRUE FALSE  TRUE  TRUE  TRUE  TRUE FALSE  TRUE  TRUE FALSE  TRUE
-##  [49]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE FALSE  TRUE  TRUE FALSE FALSE  TRUE
-##  [61]  TRUE  TRUE FALSE FALSE FALSE  TRUE  TRUE FALSE FALSE FALSE  TRUE  TRUE
-##  [73] FALSE FALSE  TRUE FALSE FALSE  TRUE  TRUE  TRUE  TRUE FALSE  TRUE  TRUE
-##  [85]  TRUE  TRUE  TRUE  TRUE FALSE FALSE FALSE  TRUE  TRUE FALSE  TRUE FALSE
-##  [97]  TRUE  TRUE FALSE FALSE</code></pre>
+<pre><code>##   [1] FALSE FALSE  TRUE FALSE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE FALSE  TRUE
+##  [13] FALSE FALSE FALSE  TRUE FALSE  TRUE  TRUE FALSE FALSE FALSE  TRUE  TRUE
+##  [25]  TRUE  TRUE  TRUE FALSE FALSE FALSE  TRUE  TRUE  TRUE FALSE FALSE  TRUE
+##  [37]  TRUE FALSE FALSE  TRUE  TRUE FALSE  TRUE  TRUE FALSE  TRUE  TRUE  TRUE
+##  [49]  TRUE FALSE FALSE FALSE  TRUE  TRUE FALSE  TRUE FALSE FALSE  TRUE  TRUE
+##  [61] FALSE  TRUE FALSE  TRUE  TRUE  TRUE  TRUE FALSE  TRUE FALSE FALSE  TRUE
+##  [73] FALSE FALSE FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE FALSE  TRUE
+##  [85]  TRUE  TRUE  TRUE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE  TRUE FALSE
+##  [97]  TRUE FALSE FALSE  TRUE</code></pre>
 <pre class="r"><code>my_letters &lt;- sample(letters)
 my_letters</code></pre>
-<pre><code>##  [1] &quot;l&quot; &quot;r&quot; &quot;v&quot; &quot;s&quot; &quot;x&quot; &quot;p&quot; &quot;m&quot; &quot;j&quot; &quot;c&quot; &quot;z&quot; &quot;b&quot; &quot;i&quot; &quot;e&quot; &quot;u&quot; &quot;y&quot; &quot;a&quot; &quot;d&quot; &quot;h&quot; &quot;t&quot;
-## [20] &quot;n&quot; &quot;w&quot; &quot;k&quot; &quot;g&quot; &quot;f&quot; &quot;o&quot; &quot;q&quot;</code></pre>
+<pre><code>##  [1] &quot;n&quot; &quot;j&quot; &quot;e&quot; &quot;r&quot; &quot;f&quot; &quot;k&quot; &quot;p&quot; &quot;b&quot; &quot;l&quot; &quot;d&quot; &quot;t&quot; &quot;i&quot; &quot;q&quot; &quot;x&quot; &quot;m&quot; &quot;u&quot; &quot;v&quot; &quot;o&quot; &quot;y&quot;
+## [20] &quot;g&quot; &quot;s&quot; &quot;w&quot; &quot;z&quot; &quot;c&quot; &quot;a&quot; &quot;h&quot;</code></pre>
 <pre class="r"><code>my_list &lt;- list(my_matrix, my_logical, my_letters)
 my_list</code></pre>
 <pre><code>## [[1]]
-##           [,1]       [,2]      [,3]      [,4]
-## [1,] 0.7672814 0.09900542 0.6706234 0.6730062
-## [2,] 0.6625026 0.62433376 0.5647866 0.4187497
-## [3,] 0.3048225 0.72599234 0.1907080 0.3847068
-## [4,] 0.6957842 0.56714211 0.7182982 0.1377028
+##           [,1]      [,2]       [,3]      [,4]
+## [1,] 0.2771800 0.3717226 0.49380343 0.3266357
+## [2,] 0.8360485 0.3388670 0.46884813 0.6685082
+## [3,] 0.4315547 0.3675805 0.08008885 0.4269923
+## [4,] 0.1511688 0.1899667 0.26153252 0.9428337
 ## 
 ## [[2]]
-##   [1]  TRUE FALSE  TRUE FALSE  TRUE FALSE FALSE  TRUE  TRUE  TRUE  TRUE FALSE
-##  [13]  TRUE  TRUE FALSE FALSE  TRUE  TRUE  TRUE FALSE FALSE  TRUE FALSE  TRUE
-##  [25]  TRUE  TRUE  TRUE  TRUE  TRUE FALSE  TRUE FALSE  TRUE  TRUE  TRUE  TRUE
-##  [37]  TRUE  TRUE FALSE  TRUE  TRUE  TRUE  TRUE FALSE  TRUE  TRUE FALSE  TRUE
-##  [49]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE FALSE  TRUE  TRUE FALSE FALSE  TRUE
-##  [61]  TRUE  TRUE FALSE FALSE FALSE  TRUE  TRUE FALSE FALSE FALSE  TRUE  TRUE
-##  [73] FALSE FALSE  TRUE FALSE FALSE  TRUE  TRUE  TRUE  TRUE FALSE  TRUE  TRUE
-##  [85]  TRUE  TRUE  TRUE  TRUE FALSE FALSE FALSE  TRUE  TRUE FALSE  TRUE FALSE
-##  [97]  TRUE  TRUE FALSE FALSE
+##   [1] FALSE FALSE  TRUE FALSE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE FALSE  TRUE
+##  [13] FALSE FALSE FALSE  TRUE FALSE  TRUE  TRUE FALSE FALSE FALSE  TRUE  TRUE
+##  [25]  TRUE  TRUE  TRUE FALSE FALSE FALSE  TRUE  TRUE  TRUE FALSE FALSE  TRUE
+##  [37]  TRUE FALSE FALSE  TRUE  TRUE FALSE  TRUE  TRUE FALSE  TRUE  TRUE  TRUE
+##  [49]  TRUE FALSE FALSE FALSE  TRUE  TRUE FALSE  TRUE FALSE FALSE  TRUE  TRUE
+##  [61] FALSE  TRUE FALSE  TRUE  TRUE  TRUE  TRUE FALSE  TRUE FALSE FALSE  TRUE
+##  [73] FALSE FALSE FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE FALSE  TRUE
+##  [85]  TRUE  TRUE  TRUE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE  TRUE FALSE
+##  [97]  TRUE FALSE FALSE  TRUE
 ## 
 ## [[3]]
-##  [1] &quot;l&quot; &quot;r&quot; &quot;v&quot; &quot;s&quot; &quot;x&quot; &quot;p&quot; &quot;m&quot; &quot;j&quot; &quot;c&quot; &quot;z&quot; &quot;b&quot; &quot;i&quot; &quot;e&quot; &quot;u&quot; &quot;y&quot; &quot;a&quot; &quot;d&quot; &quot;h&quot; &quot;t&quot;
-## [20] &quot;n&quot; &quot;w&quot; &quot;k&quot; &quot;g&quot; &quot;f&quot; &quot;o&quot; &quot;q&quot;</code></pre>
+##  [1] &quot;n&quot; &quot;j&quot; &quot;e&quot; &quot;r&quot; &quot;f&quot; &quot;k&quot; &quot;p&quot; &quot;b&quot; &quot;l&quot; &quot;d&quot; &quot;t&quot; &quot;i&quot; &quot;q&quot; &quot;x&quot; &quot;m&quot; &quot;u&quot; &quot;v&quot; &quot;o&quot; &quot;y&quot;
+## [20] &quot;g&quot; &quot;s&quot; &quot;w&quot; &quot;z&quot; &quot;c&quot; &quot;a&quot; &quot;h&quot;</code></pre>
 <p>2b.</p>
 <pre class="r"><code>new_list &lt;- list(my_matrix[[2,2]], my_logical[2], my_letters[2])
 new_list</code></pre>
 <pre><code>## [[1]]
-## [1] 0.6243338
+## [1] 0.338867
 ## 
 ## [[2]]
 ## [1] FALSE
 ## 
 ## [[3]]
-## [1] &quot;r&quot;</code></pre>
+## [1] &quot;j&quot;</code></pre>
 <p>2c.</p>
 <pre class="r"><code>new_list</code></pre>
 <pre><code>## [[1]]
-## [1] 0.6243338
+## [1] 0.338867
 ## 
 ## [[2]]
 ## [1] FALSE
 ## 
 ## [[3]]
-## [1] &quot;r&quot;</code></pre>
+## [1] &quot;j&quot;</code></pre>
 <pre class="r"><code>typeof(new_list[[1]])</code></pre>
 <pre><code>## [1] &quot;double&quot;</code></pre>
 <pre class="r"><code>typeof(new_list[[2]])</code></pre>
@@ -447,7 +447,7 @@ new_list</code></pre>
 <p>2d.</p>
 <pre class="r"><code>new_vector &lt;- c(new_list[[1]], new_list[[2]], new_list[[3]])
 new_vector</code></pre>
-<pre><code>## [1] &quot;0.624333763960749&quot; &quot;FALSE&quot;             &quot;r&quot;</code></pre>
+<pre><code>## [1] &quot;0.338866991922259&quot; &quot;FALSE&quot;             &quot;j&quot;</code></pre>
 <p>2e.</p>
 <pre class="r"><code>class(new_vector)</code></pre>
 <pre><code>## [1] &quot;character&quot;</code></pre>
@@ -456,77 +456,78 @@ new_vector</code></pre>
 </ol>
 <pre class="r"><code>my_unifs &lt;- runif(26, min=0, max=10)
 my_unifs</code></pre>
-<pre><code>##  [1] 3.5554634 8.1161593 8.7771615 4.8922772 4.5472034 0.6134437 0.4964326
-##  [8] 3.3507422 2.2762405 9.9632993 7.0217041 3.8296653 5.2556421 4.0676762
-## [15] 7.4778395 5.0728462 6.3961201 4.3416440 2.2561384 2.3661590 0.7203960
-## [22] 1.7998524 6.5896639 9.0616756 6.1355910 4.8948243</code></pre>
+<pre><code>##  [1] 1.6748856 8.3614544 5.9900549 0.1252998 1.4145369 3.5933431 1.3122756
+##  [8] 3.9056984 6.2929115 1.6958073 1.3233127 1.7018652 2.3056460 0.9826281
+## [15] 7.8722856 9.0620523 1.4903419 9.6000487 6.5885608 6.9034240 0.6205525
+## [22] 9.9371575 2.1897781 3.6307748 8.7208637 6.1279512</code></pre>
 <pre class="r"><code>upper &lt;- toupper(letters)
 my_letters &lt;- sample(upper)
 my_letters</code></pre>
-<pre><code>##  [1] &quot;L&quot; &quot;U&quot; &quot;A&quot; &quot;R&quot; &quot;Z&quot; &quot;V&quot; &quot;O&quot; &quot;I&quot; &quot;F&quot; &quot;W&quot; &quot;E&quot; &quot;H&quot; &quot;Q&quot; &quot;M&quot; &quot;G&quot; &quot;D&quot; &quot;J&quot; &quot;B&quot; &quot;X&quot;
-## [20] &quot;N&quot; &quot;S&quot; &quot;T&quot; &quot;K&quot; &quot;Y&quot; &quot;P&quot; &quot;C&quot;</code></pre>
+<pre><code>##  [1] &quot;Y&quot; &quot;Q&quot; &quot;U&quot; &quot;G&quot; &quot;V&quot; &quot;B&quot; &quot;C&quot; &quot;X&quot; &quot;J&quot; &quot;P&quot; &quot;R&quot; &quot;I&quot; &quot;W&quot; &quot;L&quot; &quot;D&quot; &quot;K&quot; &quot;F&quot; &quot;E&quot; &quot;N&quot;
+## [20] &quot;M&quot; &quot;H&quot; &quot;O&quot; &quot;T&quot; &quot;S&quot; &quot;Z&quot; &quot;A&quot;</code></pre>
 <pre class="r"><code>typeof(my_unifs)</code></pre>
 <pre><code>## [1] &quot;double&quot;</code></pre>
 <pre class="r"><code>dFrame &lt;- data.frame(my_unifs, my_letters)
 dFrame</code></pre>
 <pre><code>##     my_unifs my_letters
-## 1  3.5554634          L
-## 2  8.1161593          U
-## 3  8.7771615          A
-## 4  4.8922772          R
-## 5  4.5472034          Z
-## 6  0.6134437          V
-## 7  0.4964326          O
-## 8  3.3507422          I
-## 9  2.2762405          F
-## 10 9.9632993          W
-## 11 7.0217041          E
-## 12 3.8296653          H
-## 13 5.2556421          Q
-## 14 4.0676762          M
-## 15 7.4778395          G
-## 16 5.0728462          D
-## 17 6.3961201          J
-## 18 4.3416440          B
-## 19 2.2561384          X
-## 20 2.3661590          N
-## 21 0.7203960          S
-## 22 1.7998524          T
-## 23 6.5896639          K
-## 24 9.0616756          Y
-## 25 6.1355910          P
-## 26 4.8948243          C</code></pre>
+## 1  1.6748856          Y
+## 2  8.3614544          Q
+## 3  5.9900549          U
+## 4  0.1252998          G
+## 5  1.4145369          V
+## 6  3.5933431          B
+## 7  1.3122756          C
+## 8  3.9056984          X
+## 9  6.2929115          J
+## 10 1.6958073          P
+## 11 1.3233127          R
+## 12 1.7018652          I
+## 13 2.3056460          W
+## 14 0.9826281          L
+## 15 7.8722856          D
+## 16 9.0620523          K
+## 17 1.4903419          F
+## 18 9.6000487          E
+## 19 6.5885608          N
+## 20 6.9034240          M
+## 21 0.6205525          H
+## 22 9.9371575          O
+## 23 2.1897781          T
+## 24 3.6307748          S
+## 25 8.7208637          Z
+## 26 6.1279512          A</code></pre>
 <pre class="r"><code>nrow(dFrame)</code></pre>
 <pre><code>## [1] 26</code></pre>
 <pre class="r"><code>dFrame[sample(1:nrow(dFrame), 4), 1] &lt;- NA
 dFrame</code></pre>
 <pre><code>##     my_unifs my_letters
-## 1  3.5554634          L
-## 2  8.1161593          U
-## 3  8.7771615          A
-## 4  4.8922772          R
-## 5  4.5472034          Z
-## 6         NA          V
-## 7  0.4964326          O
-## 8  3.3507422          I
-## 9  2.2762405          F
-## 10 9.9632993          W
-## 11 7.0217041          E
-## 12 3.8296653          H
-## 13 5.2556421          Q
-## 14        NA          M
-## 15 7.4778395          G
-## 16 5.0728462          D
-## 17 6.3961201          J
-## 18 4.3416440          B
-## 19        NA          X
-## 20 2.3661590          N
-## 21 0.7203960          S
-## 22        NA          T
-## 23 6.5896639          K
-## 24 9.0616756          Y
-## 25 6.1355910          P
-## 26 4.8948243          C</code></pre>
+## 1  1.6748856          Y
+## 2  8.3614544          Q
+## 3  5.9900549          U
+## 4  0.1252998          G
+## 5  1.4145369          V
+## 6  3.5933431          B
+## 7  1.3122756          C
+## 8  3.9056984          X
+## 9  6.2929115          J
+## 10 1.6958073          P
+## 11 1.3233127          R
+## 12 1.7018652          I
+## 13 2.3056460          W
+## 14        NA          L
+## 15 7.8722856          D
+## 16 9.0620523          K
+## 17        NA          F
+## 18 9.6000487          E
+## 19 6.5885608          N
+## 20        NA          M
+## 21        NA          H
+## 22 9.9371575          O
+## 23 2.1897781          T
+## 24 3.6307748          S
+## 25 8.7208637          Z
+## 26 6.1279512          A</code></pre>
+<p>3d.</p>
 
 
 

@@ -61,4 +61,10 @@ nrow(dFrame)
 dFrame[sample(1:nrow(dFrame), 4), 1] <- NA
 dFrame
 ```
+3d. 
+```{r}
+
+```
+
+
 
