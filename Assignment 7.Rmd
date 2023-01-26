@@ -1,0 +1,44 @@
+---
+title: "Assignment 7"
+author: "Jack Eschert"
+date: "2023-01-24"
+output: html_document
+---
+1. 
+```{r}
+library(tidyverse)
+view(starwars)
+
+newtibble <- starwars %>%
+  group_by(species) %>%
+  summarize(TotalNumber=n()) %>%
+  filter(TotalNumber>1)
+newtibble
+
+sw <- starwars %>%
+  filter(species %in% newtibble$species)
+```
+
+2. 
+```{r}
+anyNA(sw)
+sw
+clean <- sw[complete.cases(sw[,2]),]
+clean
+clean2 <-group_by(clean, species)
+summarize(clean2, mean(height), median(height), sd(height))
+```
+3. 
+```{r}
+palete <- c("forestgreen", "slategray", "goldenrod", "burlywood4", "aquamarine1", "hotpink1", "lightsalmon", "linen", "tan")
+p1 <- ggplot(data=clean2, mapping=aes(x=species, y=height, fill=species)) + geom_boxplot() + scale_fill_manual(values=palete)
+p1
+p2 <- p1 + theme_minimal(base_family = "sans") + labs(y="Height (cm)", x="Species") + annotate(geom="text", label="p=1.2E-0.5", x=8.75, y=230)
+p2
+```
+4. 
+```{r}
+
+```
+
+

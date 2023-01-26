@@ -63,7 +63,20 @@ dFrame
 ```
 3d. 
 ```{r}
-
+which(!complete.cases(dFrame))
+```
+3e. 
+```{r}
+dFrame[order(dFrame$my_letters), ]
+```
+3f. 
+```{r}
+mean(dFrame$my_unifs, na.rm=TRUE)
+```
+3g. 
+```{r}
+names(dFrame)[2] <- "my_LETTERS"
+names(dFrame)
 ```
 
 

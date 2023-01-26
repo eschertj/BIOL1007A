@@ -101,8 +101,9 @@ select(starwarsClean, contains("color"))
 select(starwarsClean, haircolor = hair_color) #returns only renamed column
 rename(starwarsClean, haircolor = hair_color) #returns only whole data frame
 
+starwarsClean
 
-#### mutate(): creates new variable using functions of exisitng variables 
+#### mutate(): creates new variable using functions of existing variables 
 # let's create a new column that is hight divided by mass 
 mutate(starwarsClean, ratio = height/mass)
 
@@ -155,4 +156,4 @@ summarize(starwarsGenders, meanHeight=mean(height, na.rm=T), TotalNumber=n())
           (species == "Human" ~ "Human",
             TRUE ~ "Non-Human"))
 # syaing a condition, ~ says what to put in that column if it's true and the other ~ for what to put in the column is not true 
- # uses confition and puts "Human" if True in sp column, puts "non-Human" if it's FALSE and not human 
+ # uses confition and puts "Human" if True in sp column, puts "non-Human" if it's FALSE and not human    
