@@ -1,0 +1,40 @@
+---
+title: "Weekly Assignment 3"
+author: "Jack Eschert"
+date: "2023-01-26"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+```{r}
+library(tidyverse)
+library(ggthemes)
+library(dplyr)
+
+dryadData <- read.table("Data/veysey-babbitt_data_amphibians.csv", header=TRUE, sep=",", stringsAsFactors = TRUE)
+
+dryData <- filter(dryadData, species == "RASY")
+
+dryestData <- mutate(dryData, ratio = No.recap/count.total.adults)
+
+newData <- dryestData %>%
+  group_by(treatment) %>%
+  summarize(average_ratio = mean(ratio, na.rm=TRUE))
+
+#in the factor function it reassigns different names for them when specify label and levels specification changes the order 
+
+newData$treatment <- factor(newData$treatment, 
+            levels=c("Reference",
+                     "100m", "30m"))
+
+# use dplyr to simplify the data set use the filter and mutate function
+
+
+
+p <- ggplot(data=newData, aes(x=treatment, y=average_ratio)) + geom_bar(stat="identity", color="black") 
+  ylab("Proportion of recaptured wood frogs") +
+  scale_x_discrete(labels=c("Reference", "100m", "30m")) +
+  theme_few() + scale_fill_grey() + 
+  theme(panel.background = element_rect(fill = 'gray94', color = 'black'), legend.position="top",  legend.title= element_blank(), axis.title.y = element_text(size=12, face="bold", colour = "black"), strip.text.y = element_text(size = 10, face="bold", colour = "black")) 
+p
+```
