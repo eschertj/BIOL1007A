@@ -1,7 +1,6 @@
 ---
 title: "BIOL1007A Web Page"
 author: "Jack Eschert"
-date: "2023-01-10"
 output: 
   prettydoc::html_pretty:
     theme: cayman
