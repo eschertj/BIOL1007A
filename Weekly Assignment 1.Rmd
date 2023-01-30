@@ -65,3 +65,17 @@ output: html_document
 + I recommend saving the projects to your Desktop for ease 
 8. You've now created a repository which will allow you to work with all your files in one place 
 
+### *Working with R Markdown*
+1. In R studio, create a new R Markdown file by selecting the File tab, New File, and R Markdown
+2. Select HTML as the desired file output and name the file index so GitHub can recognize it 
+3. Save the R markdown file after typing something into the file contents 
+
+### *Transferring to Github from R*
+1. In the 2nd quadrant if your screen, navigate to the terminal tab and enter these commands with the exact case and syntax below:
+  + git status 
+  + git add -A
+  + git status (selected files should turn green after being red)
+  + git commit -am "insert a message you'd like for bookeeping purposes on GitHub here"
+  + git push 
+2. You're done, enjoy your website! 
+
