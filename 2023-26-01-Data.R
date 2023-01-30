@@ -39,3 +39,40 @@ b1 <- billboard %>%
     values_drop_na = TRUE # removes any rows where the value = NA
   )
 view(b1) # R markdown does not like view, takeout before knitting 
+
+# pivot_wider
+# best for making occupancy matrix 
+# an occupancy matrix is having an individual and 0 or 1 if present at site 
+glimpse(fish_encounters)
+view(fish_encounters)
+
+fish_encounters %>% 
+  pivot_wider(names_from = station, # which columns you want to turn into multiple columns
+              values_from = seen) # which column contains the values for the new column cells
+# shows NA if fish wasn't seen there but 1 if was 
+
+fish_encounters %>% 
+  pivot_wider(names_from = station, 
+              values_from = seen,
+              values_fill = 0)
+# values_fill() allows any NA to be replaced with 0 
+
+#### Dryad: resource that makes research data freely reusable, citable, and discoverable 
+# datadryad.org/search/
+
+# read.table() after loading csv
+dryadData <- read.table(file = "Data/veysey-babbitt_data_amphibians.csv", header = TRUE, sep = ",")
+#can hit tab after starting to type name of file and it will auto fill
+# comma seperated since is a CSV file
+glimpse(dryadData)
+head(dryadData)
+table(dryadData$species) # allows you to see different groups of character columns
+summary(dryadData$mean.hydro)
+
+# weekly assignment is going to dryad, finding a data set that interests you, and reproducing a ggplot graph
+
+dryadData$species <-factor(dryadData$species, labels=c("Spotted Salamander", "Wood Frog")) #creating labels to use for plot
+str(dryadData$species)
+p <- ggplot(data=dryadData,
+            aes(x=interaction(wetland,y=count.total.adults)) +
+  geom_boxplot()

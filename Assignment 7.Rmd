@@ -38,7 +38,33 @@ p2
 ```
 4. 
 ```{r}
+library(ggthemes)
+newtibble <- starwars %>%
+  group_by(species) %>%
+  summarize(TotalNumber=n()) %>%
+  filter(TotalNumber>1)
+newtibble
 
+sw <- starwars %>%
+  filter(species %in% newtibble$species)
+
+anyNA(sw)
+sw
+clean <- sw[complete.cases(sw[,2]),]
+clean
+clean2 <-group_by(clean, species)
+summarize(clean2, mean(mass), median(mass), sd(mass))
+
+palete <- c("darksalmon", "darkorchid4", "gray47", "skyblue1", "sienna2", "thistle", "plum2", "seagreen", "midnightblue")
+g1 <- ggplot(data=clean2, mapping=aes(x=species, y=mass, fill=species)) +  geom_bar(stat="identity", width=.5) + scale_fill_manual(values=palete)
+g1
+g2 <- g1 + theme_economist(base_family = "sans") + labs(y="Mass (kg)", x="Species")
+g2
+```
+5. 
+```{r}
+library(patchwork)
+p2 / g2
 ```
 
 
