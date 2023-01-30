@@ -7,8 +7,16 @@ output:
     theme: cayman
     highlight: github
 ---
+A Picture to Help you through a Long Winter (Cape Cod):   
+![](images/cape.jpeg) 
 
-## Assignments 
+Hello! My name is Jack Eschert; this is my classs portfolio page for my J Term course, BIOL 1007A: Reproducible Biology in R. Here you can find my assignments by link below:
+
+
+# Assignments 
+
+### *Daily Assignments*
+
 [Assignment 1](Assignment-1.html)  
 
 [Assignment 2](Assignment-2.html)  
@@ -22,6 +30,8 @@ output:
 [Assignment 6](Assignment-6.html)
 
 [Assignment 7](Assignment-7.html)
+
+### *Weekly Assignments*
 
 [Weekly Assignment 1](Weekly-Assignment-1.html)
 
