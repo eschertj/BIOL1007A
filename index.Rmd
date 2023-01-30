@@ -9,7 +9,7 @@ output:
 A Picture to Help you through a Long Winter (Cape Cod):   
 ![](images/cape.jpeg) 
 
-Hello! My name is Jack Eschert; this is my classs portfolio page for my J Term course, BIOL 1007A: Reproducible Biology in R. Here you can find my assignments by link below:
+Hello! My name is Jack Eschert; this is my class portfolio page for my J Term course, BIOL 1007A: Reproducible Biology in R. Here you can find my assignments by link below:
 
 
 # Assignments 

@@ -1,4 +1,4 @@
-####### Finishing up matricies and data frames 
+####### Finishing up matrices and data frames 
 # 19 January 2023
 # JWE
 
@@ -85,7 +85,7 @@ functionName <- function(argX=defaultX, argY=defaultY){x <- 1}
 # the function() in the parentheses is anything you want to adjust 
 # return(z)
 # when we print somthing the function shows us what is in that variable 
-# you can use print within a fucntion but that can create problems therefore we want the return function, to get things out from the function 
+# you can use print within a function but that can create problems therefore we want the return function, to get things out from the function 
 
 
 

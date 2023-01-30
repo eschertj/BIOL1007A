@@ -61,9 +61,10 @@ output: html_document
 5. Back in R Studio, create select the *File* tab, *New Project*, *Version Control*, *Git* 
 + This step confirms successful installation of Git if a check box appears for "open in new session"
 6. Paste the URL from your Notes sheet into *Repository URL*, then enter the **same name** for *Project Directory Name* as you did for the *Repository Name* on GitHub.
-7. Select the desired save location for this project under *Create project as subdirectory of:*
+7. You may be asked for a personal access token, this is provided on your GitHub page and is only required to be pasted into R one time so R and GitHub can verify your identity
+8. Select the desired save location for this project under *Create project as subdirectory of:*
 + I recommend saving the projects to your Desktop for ease 
-8. You've now created a repository which will allow you to work with all your files in one place 
+9. You've now created a repository which will allow you to work with all your files in one place 
 
 ### *Working with R Markdown*
 1. In R studio, create a new R Markdown file by selecting the File tab, New File, and R Markdown
@@ -77,6 +78,6 @@ output: html_document
   + git status (selected files should turn green after being red)
   + git commit -am "insert a message you'd like for bookeeping purposes on GitHub here"
   + git push 
-2. your website will have the following format: YourGitHubUsername.github.io/RepositoryName/
+2. Your website will have the following format: YourGitHubUsername.github.io/RepositoryName/
 3. You're done, enjoy your website! 
 

@@ -110,7 +110,7 @@ p1 + p2 + p3
 # puts them in same row
 
 # puts on top of another /
-p1 / p2 / p3
+p1 / p2 / p3 
 
 # to group them 
 (p1 + p2) / p3
