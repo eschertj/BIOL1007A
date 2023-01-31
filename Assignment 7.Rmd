@@ -3,6 +3,8 @@ title: "Assignment 7"
 author: "Jack Eschert"
 date: "2023-01-24"
 output: html_document
+editor_options: 
+  chunk_output_type: console
 ---
 1. 
 ```{r}
@@ -48,17 +50,21 @@ newtibble
 sw <- starwars %>%
   filter(species %in% newtibble$species)
 
+sw
+
 anyNA(sw)
 sw
 clean <- sw[complete.cases(sw[,2]),]
 clean
 clean2 <-group_by(clean, species)
-summarize(clean2, mean(mass), median(mass), sd(mass))
+test<-summarize(clean2, Avg=mean(mass, na.rm=T), median(mass, na.rm=T), sd(mass, na.rm=T), sum(mass, na.rm=T))
 
 palete <- c("darksalmon", "darkorchid4", "gray47", "skyblue1", "sienna2", "thistle", "plum2", "seagreen", "midnightblue")
-g1 <- ggplot(data=clean2, mapping=aes(x=species, y=mass, fill=species)) +  geom_bar(stat="identity", width=.5) + scale_fill_manual(values=palete)
+# factors puts them in a certain order and lets you manually reorder via the levels argument 
+# test$species <- factor(test$species, levels = c("Human", "Droid", "Gungan", "Kaminoan", "Mirialan", "Twi'lek",  "Wookiee",  "Zabrak"))
+g1 <- ggplot(data=test, mapping=aes(x=species, y=Avg, fill=species)) +  geom_bar(stat="identity", position = "dodge", width=.5) + scale_fill_manual(values=palete) 
 g1
-g2 <- g1 + theme_economist(base_family = "sans") + labs(y="Mass (kg)", x="Species")
+g2 <- g1 + theme_economist(base_family = "sans") + labs(y="Average Mass (kg)", x="Species")
 g2
 ```
 5. 

@@ -3,6 +3,8 @@ title: "Assignment 3"
 author: "Jack Eschert"
 date: "2023-01-12"
 output: html_document
+editor_options: 
+  chunk_output_type: console
 ---
 
 Question 1

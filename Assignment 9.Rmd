@@ -1,0 +1,35 @@
+---
+title: "Assignment 9"
+author: "Jack Eschert"
+date: "2023-01-30"
+output: html_document
+---
+1. 
+```{r}
+vector <- round(runif(min=0, max=1, n=50))
+vector
+counter <- 0
+for(i in 1:length(vector)){
+  if (vector[i]==0) {counter <- counter + 1} # counter is the running count of zero
+}
+print(counter)  # global environment not local like a function therefore use print() rather than return() 
+```
+2. 
+```{r}
+f <- function(x,y){
+  m <- matrix(NA, nrow=x, ncol=y)
+  for(i in 1:x){
+    for(j in 1:y){
+      m[i,j] <- i * j
+    }
+  }
+return(m)
+}
+
+f(5,6)
+```
+3.
+```{r}
+
+```
+

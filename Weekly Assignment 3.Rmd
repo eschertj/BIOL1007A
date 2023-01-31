@@ -10,6 +10,7 @@ editor_options:
 library(tidyverse)
 library(ggthemes)
 library(dplyr)
+library(plotrix)
 
 dryadData <- read.table("Data/veysey-babbitt_data_amphibians.csv", header=TRUE, sep=",", stringsAsFactors = TRUE)
 
@@ -19,7 +20,9 @@ dryestData <- mutate(dryData, ratio = No.recap/count.total.adults)
 
 newData <- dryestData %>%
   group_by(treatment) %>%
-  summarize(average_ratio = mean(ratio, na.rm=TRUE))
+  summarize(average_ratio = mean(ratio, na.rm=TRUE), stder = std.error(ratio))
+
+#view(newData)
 
 #in the factor function it reassigns different names for them when specify label and levels specification changes the order 
 
@@ -29,12 +32,13 @@ newData$treatment <- factor(newData$treatment,
 
 # use dplyr to simplify the data set use the filter and mutate function
 
-
-
-p <- ggplot(data=newData, aes(x=treatment, y=average_ratio)) + geom_bar(stat="identity", color="black") 
-  ylab("Proportion of recaptured wood frogs") +
+p <- ggplot(data=newData, aes(x=treatment, y=average_ratio, fill=treatment)) + 
+  geom_bar(stat="identity") +
+  geom_errorbar(aes(ymin=average_ratio-stder, ymax=average_ratio+stder, width=0.3)) + 
+  scale_fill_manual(values = c("gray48", "gray85", "gray58")) +
+  ylab("Proportion of recaptured wood frogs") + xlab(" ") +
   scale_x_discrete(labels=c("Reference", "100m", "30m")) +
-  theme_few() + scale_fill_grey() + 
-  theme(panel.background = element_rect(fill = 'gray94', color = 'black'), legend.position="top",  legend.title= element_blank(), axis.title.y = element_text(size=12, face="bold", colour = "black"), strip.text.y = element_text(size = 10, face="bold", colour = "black")) 
+  theme_few() + #scale_fill_grey() + 
+  theme(panel.background = element_rect(fill = "gray100", color = 'black', "gray"), legend.position="top",  legend.title= element_blank(), axis.title.y = element_text(size=12, face="bold", colour = "black"), strip.text.y = element_text(size = 10, face="bold", colour = "black")) 
 p
 ```

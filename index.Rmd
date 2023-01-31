@@ -30,8 +30,12 @@ Hello! My name is Jack Eschert; this is my class portfolio page for my J Term co
 
 [Assignment 7](Assignment-7.html)
 
+[Assignment 9](Assignment-9.html)
+
 ### *Weekly Assignments*
 
 [Weekly Assignment 1](Weekly-Assignment-1.html)
+
+[Weekly Assignment 2](Weekly-Assignment-2.html)
 
 [Weekly Assignment 3](Weekly-Assignment-3.html)
