@@ -1,11 +1,66 @@
 ---
 title: "Weekly Assignment 2"
 author: "Jack Eschert"
-date: "2023-01-30"
+date: "2023-01-19"
 output: html_document
 ---
 1.
 ```{r}
 
+## My original thought process
+library(tidyverse)
+cont <- "Control"
+type1 <- rep(cont, 25)
+type1
+treat <- "Treatment"
+type2 <- rep(treat, 25)
+type2
+Type <- c(type1, type2)
+Type
+
+valu1 <- rnorm(n=25, mean=10, sd=1.5)
+valu1
+valu2 <- rnorm(n=25, mean=45, sd=2)
+valu2
+Value <- c(valu1, valu2)
+Value
+
+dataFrame <- data.frame(Type, Value)
+dataFrame
+
+## My original work with the function 
+set.seed(33)
+datafram <- function(meana=10, sda=1.5, meanb=45, sdb=2, n=25){
+  Type <- c(rep("Control", n), rep("Treatment", n)) 
+            Value <- c(rnorm(mean = meana, sd =sda, n=n), rnorm(mean=meanb, sd=sdb, n=n))
+            dataFram <- data.frame(Type, Value)
+            return(dataFram)
+}
+
+datafram()
+# to change the parameters paste into ()s of datafram and modify 
 ```
+2. 
+```{r}
+data <- datafram()
+head(data)
+
+```
+
+3. 
+```{r}
+?aov
+anova <- aov(Value ~ Type, data = data)
+summary(anova)
+```
+4.
+```{r eval=FALSE}
+#put ANOVA code within the function, put in any simulated data frame have only one function and have the variables be type and value 
+function()
+View(summary(anova))
+anova <- aov(Value ~ Type, data = d)
+# code for extracting the p value
+summary(anova)[[1]][["Pr(>F)"]] 
+```
+
 

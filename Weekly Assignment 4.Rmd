@@ -1,0 +1,29 @@
+---
+title: "Weekly Assignment 4"
+author: "Jack Eschert"
+date: "2023-01-31"
+output: html_document
+---
+1. 
+```{r}
+flower <- data.frame(Species=iris$Species, Sepal.Length=iris$Sepal.Length)
+anova <- aov(Sepal.Length ~ Species, data=flower)
+summary(anova)
+```
+P-value
+```{r}
+pv <- summary(anova)[[1]][["Pr(>F)"]] 
+pv
+```
+
+Plot
+```{r}
+library(ggplot2)
+library(ggthemes)
+
+p <- ggplot(data=flower, aes(x=Species, y=Sepal.Length, fill=Species)) + 
+  geom_boxplot() + scale_fill_manual(values = c("greenyellow", "darkslategray", "darkviolet")) + ylab("Sepal Length") + xlab("Flower Species") + theme_classic() + annotate(geom="text", label=signif(pv,3), x=3.30, y=7.65) + annotate(geom="text", label="p=", x=3.30, y=7.85)
+p
+``` 
+
+
