@@ -398,80 +398,80 @@ Type</code></pre>
 ## [49] &quot;Treatment&quot; &quot;Treatment&quot;</code></pre>
 <pre class="r"><code>valu1 &lt;- rnorm(n=25, mean=10, sd=1.5)
 valu1</code></pre>
-<pre><code>##  [1]  9.536272 10.899452 12.267705 11.302358  9.489827 10.165707  9.414728
-##  [8]  8.547880 10.386329  8.398329  8.124976 12.501288 12.320878  8.502765
-## [15]  8.886798  8.941487  9.174285  8.873239  9.991878 10.501460 10.184204
-## [22] 10.560772 11.429210  9.288646 12.348301</code></pre>
+<pre><code>##  [1]  8.712474  8.989247  9.071734  8.699420 12.413750 10.080603  8.357659
+##  [8] 10.317288  7.842702 12.059067  8.930244  7.525737 11.158426 12.523753
+## [15] 13.824293 10.895966 12.014651  9.566035 11.169900  5.742497  8.696749
+## [22] 11.098508 10.493434 11.048696 11.565383</code></pre>
 <pre class="r"><code>valu2 &lt;- rnorm(n=25, mean=45, sd=2)
 valu2</code></pre>
-<pre><code>##  [1] 43.86661 47.60941 44.83065 47.09077 41.22604 43.88426 45.11588 45.38817
-##  [9] 45.43887 45.05584 46.19210 47.17415 41.27997 46.75498 44.16553 39.09261
-## [17] 47.09565 45.15771 42.48927 47.03142 44.54083 49.02452 44.91186 45.63769
-## [25] 45.39577</code></pre>
+<pre><code>##  [1] 43.10373 39.74506 43.63147 48.29257 47.70980 43.10226 42.75610 46.02986
+##  [9] 43.69002 47.89907 44.99147 46.08246 45.90778 41.65281 45.79359 47.30492
+## [17] 45.69278 43.81719 45.49334 44.35348 43.45052 47.64689 45.34123 45.74350
+## [25] 44.77723</code></pre>
 <pre class="r"><code>Value &lt;- c(valu1, valu2)
 Value</code></pre>
-<pre><code>##  [1]  9.536272 10.899452 12.267705 11.302358  9.489827 10.165707  9.414728
-##  [8]  8.547880 10.386329  8.398329  8.124976 12.501288 12.320878  8.502765
-## [15]  8.886798  8.941487  9.174285  8.873239  9.991878 10.501460 10.184204
-## [22] 10.560772 11.429210  9.288646 12.348301 43.866608 47.609411 44.830647
-## [29] 47.090765 41.226045 43.884258 45.115880 45.388171 45.438871 45.055838
-## [36] 46.192103 47.174147 41.279965 46.754981 44.165535 39.092611 47.095648
-## [43] 45.157714 42.489270 47.031418 44.540829 49.024524 44.911862 45.637694
-## [50] 45.395765</code></pre>
+<pre><code>##  [1]  8.712474  8.989247  9.071734  8.699420 12.413750 10.080603  8.357659
+##  [8] 10.317288  7.842702 12.059067  8.930244  7.525737 11.158426 12.523753
+## [15] 13.824293 10.895966 12.014651  9.566035 11.169900  5.742497  8.696749
+## [22] 11.098508 10.493434 11.048696 11.565383 43.103730 39.745055 43.631471
+## [29] 48.292574 47.709803 43.102264 42.756104 46.029858 43.690022 47.899071
+## [36] 44.991468 46.082463 45.907779 41.652812 45.793595 47.304915 45.692783
+## [43] 43.817192 45.493343 44.353483 43.450516 47.646889 45.341230 45.743496
+## [50] 44.777227</code></pre>
 <pre class="r"><code>dataFrame &lt;- data.frame(Type, Value)
 dataFrame</code></pre>
 <pre><code>##         Type     Value
-## 1    Control  9.536272
-## 2    Control 10.899452
-## 3    Control 12.267705
-## 4    Control 11.302358
-## 5    Control  9.489827
-## 6    Control 10.165707
-## 7    Control  9.414728
-## 8    Control  8.547880
-## 9    Control 10.386329
-## 10   Control  8.398329
-## 11   Control  8.124976
-## 12   Control 12.501288
-## 13   Control 12.320878
-## 14   Control  8.502765
-## 15   Control  8.886798
-## 16   Control  8.941487
-## 17   Control  9.174285
-## 18   Control  8.873239
-## 19   Control  9.991878
-## 20   Control 10.501460
-## 21   Control 10.184204
-## 22   Control 10.560772
-## 23   Control 11.429210
-## 24   Control  9.288646
-## 25   Control 12.348301
-## 26 Treatment 43.866608
-## 27 Treatment 47.609411
-## 28 Treatment 44.830647
-## 29 Treatment 47.090765
-## 30 Treatment 41.226045
-## 31 Treatment 43.884258
-## 32 Treatment 45.115880
-## 33 Treatment 45.388171
-## 34 Treatment 45.438871
-## 35 Treatment 45.055838
-## 36 Treatment 46.192103
-## 37 Treatment 47.174147
-## 38 Treatment 41.279965
-## 39 Treatment 46.754981
-## 40 Treatment 44.165535
-## 41 Treatment 39.092611
-## 42 Treatment 47.095648
-## 43 Treatment 45.157714
-## 44 Treatment 42.489270
-## 45 Treatment 47.031418
-## 46 Treatment 44.540829
-## 47 Treatment 49.024524
-## 48 Treatment 44.911862
-## 49 Treatment 45.637694
-## 50 Treatment 45.395765</code></pre>
-<pre class="r"><code>## My original work with the function 
+## 1    Control  8.712474
+## 2    Control  8.989247
+## 3    Control  9.071734
+## 4    Control  8.699420
+## 5    Control 12.413750
+## 6    Control 10.080603
+## 7    Control  8.357659
+## 8    Control 10.317288
+## 9    Control  7.842702
+## 10   Control 12.059067
+## 11   Control  8.930244
+## 12   Control  7.525737
+## 13   Control 11.158426
+## 14   Control 12.523753
+## 15   Control 13.824293
+## 16   Control 10.895966
+## 17   Control 12.014651
+## 18   Control  9.566035
+## 19   Control 11.169900
+## 20   Control  5.742497
+## 21   Control  8.696749
+## 22   Control 11.098508
+## 23   Control 10.493434
+## 24   Control 11.048696
+## 25   Control 11.565383
+## 26 Treatment 43.103730
+## 27 Treatment 39.745055
+## 28 Treatment 43.631471
+## 29 Treatment 48.292574
+## 30 Treatment 47.709803
+## 31 Treatment 43.102264
+## 32 Treatment 42.756104
+## 33 Treatment 46.029858
+## 34 Treatment 43.690022
+## 35 Treatment 47.899071
+## 36 Treatment 44.991468
+## 37 Treatment 46.082463
+## 38 Treatment 45.907779
+## 39 Treatment 41.652812
+## 40 Treatment 45.793595
+## 41 Treatment 47.304915
+## 42 Treatment 45.692783
+## 43 Treatment 43.817192
+## 44 Treatment 45.493343
+## 45 Treatment 44.353483
+## 46 Treatment 43.450516
+## 47 Treatment 47.646889
+## 48 Treatment 45.341230
+## 49 Treatment 45.743496
+## 50 Treatment 44.777227</code></pre>
+<pre class="r"><code>## Final working function 
 set.seed(33)
 datafram &lt;- function(meana=10, sda=1.5, meanb=45, sdb=2, n=25){
   Type &lt;- c(rep(&quot;Control&quot;, n), rep(&quot;Treatment&quot;, n)) 
@@ -560,11 +560,23 @@ summary(anova)</code></pre>
 <li></li>
 </ol>
 <pre class="r"><code>#put ANOVA code within the function, put in any simulated data frame have only one function and have the variables be type and value 
-function()
-View(summary(anova))
-anova &lt;- aov(Value ~ Type, data = d)
+# don&#39;t use default variable within code otherwise not producible, make sure to use the argument variable within the code
+# # vector after subsetting therefore just say want first element no longer 2d with row and column like a data frame
+#View(summary(anova))
+
 # code for extracting the p value
-summary(anova)[[1]][[&quot;Pr(&gt;F)&quot;]] </code></pre>
+
+
+p &lt;- function(datframm = data){
+  av &lt;- aov(datframm[,2] ~ datframm[,1], data = datframm)
+    summ &lt;- summary(av)
+  answer &lt;- summ[[1]][[&quot;Pr(&gt;F)&quot;]][1]
+  return(answer)
+}
+p()</code></pre>
+<pre><code>## [1] 8.79161e-47</code></pre>
+<pre class="r"><code>p(datafram())</code></pre>
+<pre><code>## [1] 7.866417e-48</code></pre>
 
 
 

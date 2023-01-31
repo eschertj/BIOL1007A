@@ -28,7 +28,7 @@ Value
 dataFrame <- data.frame(Type, Value)
 dataFrame
 
-## My original work with the function 
+## Final working function 
 set.seed(33)
 datafram <- function(meana=10, sda=1.5, meanb=45, sdb=2, n=25){
   Type <- c(rep("Control", n), rep("Treatment", n)) 
@@ -54,13 +54,26 @@ anova <- aov(Value ~ Type, data = data)
 summary(anova)
 ```
 4.
-```{r eval=FALSE}
+```{r}
 #put ANOVA code within the function, put in any simulated data frame have only one function and have the variables be type and value 
-function()
-View(summary(anova))
-anova <- aov(Value ~ Type, data = d)
+# don't use default variable within code otherwise not producible, make sure to use the argument variable within the code
+# # vector after subsetting therefore just say want first element no longer 2d with row and column like a data frame
+#View(summary(anova))
+
 # code for extracting the p value
-summary(anova)[[1]][["Pr(>F)"]] 
+
+
+p <- function(datframm = data){
+  av <- aov(datframm[,2] ~ datframm[,1], data = datframm)
+    summ <- summary(av)
+  answer <- summ[[1]][["Pr(>F)"]][1]
+  return(answer)
+}
+p()
 ```
+```{r}
+p(datafram())
+```
+
 
 
