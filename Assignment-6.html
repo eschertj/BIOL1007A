@@ -412,6 +412,7 @@ iris1</code></pre>
 ## 26          6.7         3.1          5.6         2.4  virginica
 ## 27          6.7         3.3          5.7         2.5  virginica
 ## 28          6.2         3.4          5.4         2.3  virginica</code></pre>
+<pre class="r"><code>#giving it a vector that&#39;s a different length therefore must use in operator it&#39;ll do something else, == and %in% do similar things but == must have the same vector lengths, %in% knows the vector is of a smaller length and it checks each element of species and sees if located in new vector and locates that way, to use == must speerate the 2 species via | or </code></pre>
 <ol start="3" style="list-style-type: decimal">
 <li></li>
 </ol>
@@ -421,6 +422,12 @@ str(iris2)</code></pre>
 ##  $ Sepal.Length: num  6.4 6.1 6.7 6.1 6.1 6.6 6.7 6.1 6.2 6.3 ...
 ##  $ Sepal.Width : num  3.2 2.9 3.1 2.8 2.8 3 3 3 2.9 3.3 ...
 ##  $ Species     : Factor w/ 3 levels &quot;setosa&quot;,&quot;versicolor&quot;,..: 2 2 2 2 2 2 2 2 2 3 ...</code></pre>
+<pre class="r"><code>glimpse(iris2)</code></pre>
+<pre><code>## Rows: 28
+## Columns: 3
+## $ Sepal.Length &lt;dbl&gt; 6.4, 6.1, 6.7, 6.1, 6.1, 6.6, 6.7, 6.1, 6.2, 6.3, 7.1, 6.…
+## $ Sepal.Width  &lt;dbl&gt; 3.2, 2.9, 3.1, 2.8, 2.8, 3.0, 3.0, 3.0, 2.9, 3.3, 3.0, 3.…
+## $ Species      &lt;fct&gt; versicolor, versicolor, versicolor, versicolor, versicolo…</code></pre>
 <ol start="4" style="list-style-type: decimal">
 <li></li>
 </ol>

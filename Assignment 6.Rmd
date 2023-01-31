@@ -16,11 +16,14 @@ view(iris)
 data(iris)
 iris1 <- filter(iris, Species == c("virginica", "versicolor") & Sepal.Width>2.5 & Sepal.Length>6)
 iris1
+
+#giving it a vector that's a different length therefore must use in operator it'll do something else, == and %in% do similar things but == must have the same vector lengths, %in% knows the vector is of a smaller length and it checks each element of species and sees if located in new vector and locates that way, to use == must speerate the 2 species via | or 
 ```
 3. 
 ```{r}
 iris2 <- select(iris1, -c(Petal.Length, Petal.Width))
 str(iris2)
+glimpse(iris2)
 ```
 4. 
 ```{r}

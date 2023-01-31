@@ -362,14 +362,14 @@ display: none;
 </ol>
 <pre class="r"><code>vector &lt;- round(runif(min=0, max=1, n=50))
 vector</code></pre>
-<pre><code>##  [1] 0 1 1 1 0 0 0 0 1 0 1 1 1 1 1 1 1 0 1 1 0 0 1 0 1 1 1 0 0 1 0 0 0 1 0 1 1 0
-## [39] 0 0 1 1 0 0 0 1 1 1 0 0</code></pre>
+<pre><code>##  [1] 1 0 0 0 0 0 0 1 0 0 0 1 1 0 0 0 0 1 0 0 1 1 0 1 0 0 1 1 1 0 1 0 1 1 0 1 1 0
+## [39] 0 0 0 0 1 0 0 0 1 1 1 1</code></pre>
 <pre class="r"><code>counter &lt;- 0
 for(i in 1:length(vector)){
   if (vector[i]==0) {counter &lt;- counter + 1} # counter is the running count of zero
 }
 print(counter)  # global environment not local like a function therefore use print() rather than return() </code></pre>
-<pre><code>## [1] 24</code></pre>
+<pre><code>## [1] 29</code></pre>
 <ol start="2" style="list-style-type: decimal">
 <li></li>
 </ol>
@@ -393,6 +393,43 @@ f(5,6)</code></pre>
 <ol start="3" style="list-style-type: decimal">
 <li></li>
 </ol>
+<pre class="r"><code>set.seed(33)
+datafram &lt;- function(meana=10, sda=1.5, meanb=45, sdb=2, n=25){
+  Type &lt;- c(rep(&quot;Control&quot;, n), rep(&quot;Treatment&quot;, n)) 
+            Value &lt;- c(rnorm(mean = meana, sd =sda, n=n), rnorm(mean=meanb, sd=sdb, n=n))
+            dataFram &lt;- data.frame(Type, Value)
+            return(dataFram)
+}
+
+data &lt;- datafram()
+
+p &lt;- function(datframm = data){
+  av &lt;- aov(datframm[,2] ~ datframm[,1], data = datframm)
+    summ &lt;- summary(av)
+  answer &lt;- summ[[1]][[&quot;Pr(&gt;F)&quot;]][1]
+  return(answer)
+}
+
+p()</code></pre>
+<pre><code>## [1] 6.883163e-53</code></pre>
+<pre class="r"><code>dat &lt;- datafram(matrix(ncol=2, nrow=100))</code></pre>
+<pre><code>## Warning in rnorm(mean = meana, sd = sda, n = n): NAs produced</code></pre>
+<pre class="r"><code>  for(i in 1:100){
+      data.set &lt;- datafram()
+      pvnrt &lt;- p(data.set)
+    dat[i, 1] &lt;- i
+    dat[i, 2] &lt;- pvnrt 
+  }
+head(dat)</code></pre>
+<pre><code>##   Type        Value
+## 1    1 4.669198e-46
+## 2    2 1.915398e-49
+## 3    3 7.464663e-46
+## 4    4 6.671915e-53
+## 5    5 1.626538e-48
+## 6    6 2.751925e-49</code></pre>
+<pre class="r"><code>  # simualte data set and save integer
+ # extract the p value and put into rows of the data set</code></pre>
 
 
 

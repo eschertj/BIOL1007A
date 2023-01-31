@@ -1,0 +1,11 @@
+---
+title: "Assignment 8"
+author: "Jack Eschert"
+date: "2023-01-31"
+output: html_document
+---
+1. 
+```{r}
+
+```
+

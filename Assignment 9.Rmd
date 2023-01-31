@@ -31,5 +31,37 @@ f(5,6)
 3.
 ```{r}
 
+set.seed(33)
+datafram <- function(meana=10, sda=1.5, meanb=45, sdb=2, n=25){
+  Type <- c(rep("Control", n), rep("Treatment", n)) 
+            Value <- c(rnorm(mean = meana, sd =sda, n=n), rnorm(mean=meanb, sd=sdb, n=n))
+            dataFram <- data.frame(Type, Value)
+            return(dataFram)
+}
+
+data <- datafram()
+
+p <- function(datframm = data){
+  av <- aov(datframm[,2] ~ datframm[,1], data = datframm)
+    summ <- summary(av)
+  answer <- summ[[1]][["Pr(>F)"]][1]
+  return(answer)
+}
+
+p()
+
+
+
+dat <- datafram(matrix(ncol=2, nrow=100))
+  for(i in 1:100){
+      data.set <- datafram()
+      pvnrt <- p(data.set)
+    dat[i, 1] <- i
+    dat[i, 2] <- pvnrt 
+  }
+head(dat)
+  # simualte data set and save integer
+ # extract the p value and put into rows of the data set
+
 ```
 
