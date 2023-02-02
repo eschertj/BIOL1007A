@@ -41,3 +41,5 @@ Hello! My name is Jack Eschert; this is my class portfolio page for my J Term co
 [Weekly Assignment 3](Weekly-Assignment-3.html)
 
 [Weekly Assignment 4](Weekly-Assignment-4.html)
+
+[Final Project](Final-Project.html)
