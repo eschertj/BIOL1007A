@@ -8,6 +8,8 @@ output:
     highlight: github
 ---
 
+[Project Link](https://eschertj.github.io/portfolio/)
+
 # **Project Overview and Rationale:**
 
 For my final project, I created a personal portfolio webpage that could act as a supplement to my LinkedIn and Résumé. This webpage is unique from these two aforementioed items because it showcases my personality through the color scheme and the pictures/fun facts that could only be gleaned during an interview. The primary reason I made this webpage is because I found it increasingly more difficult for a one-page résumé to fully highlight the extent of my work and my sound candidacy for a position. In particular, a printed résumé cannot concisely present the details of my publications and a LinkedIn profile offers only a fixed template with little room for creativity. Through the work we've engaged in during BIOL 1007A, I saw the perfect opportunity to create a meaningful product. 
