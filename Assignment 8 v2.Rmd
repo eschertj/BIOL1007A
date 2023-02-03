@@ -1,0 +1,323 @@
+---
+title: "Assignment 8"
+author: "Jack Eschert"
+date: "2023-02-03"
+output: html_document
+---
+1.
+
+Weekly Assignment 2
+```{r}
+set.seed(123)
+simData <- function(mean1=10, sd1=1.5, mean2=45, sd2=2, n=25){
+  
+  Type <- rep(c("Control", "Treatment"), each = n)
+  Value <- c(rnorm(n, mean = mean1, sd = sd1), rnorm(n, mean = mean2, sd = sd2))
+  dframe <- data.frame(Type, Value)
+  return(dframe)
+}
+
+data<-simData()
+
+head(data)
+
+#############################################################################
+
+####### My code 
+
+##### My original thought process
+
+#library(tidyverse)
+#cont <- "Control"
+#type1 <- rep(cont, 25)
+#type1
+#treat <- "Treatment"
+#type2 <- rep(treat, 25)
+#type2
+#Type <- c(type1, type2)
+#Type
+
+#valu1 <- rnorm(n=25, mean=10, sd=1.5)
+#valu1
+#valu2 <- rnorm(n=25, mean=45, sd=2)
+#valu2
+#Value <- c(valu1, valu2)
+#Value
+
+#dataFrame <- data.frame(Type, Value)
+#dataFrame
+
+####### My Final working function 
+#set.seed(33)
+#datafram <- function(meana=10, sda=1.5, meanb=45, sdb=2, n=25){
+  #Type <- c(rep("Control", n), rep("Treatment", n)) 
+            #Value <- c(rnorm(mean = meana, sd =sda, n=n), rnorm(mean=meanb, sd=sdb, n=n))
+            #dataFram <- data.frame(Type, Value)
+            #return(dataFram)
+#}
+
+#datafram()
+
+#data <- datafram()
+#head(data)
+
+
+#######################################
+
+##### Analysis of my Code
+
+## NOTE: I struggled alot with Weekly Assignment 2 and consulted both Professor Ash during her office hours and the posted solutions (with her permission) since my original code did not even run, thus the reflection process will not be as rich as that for Assignment 6
+
+# my code is nearly identical to the posted solution because I worked with Professor Ash and the posted solution to reach a functioning code 
+```
+
+Running my code with new mean values
+```{r}
+set.seed(245)
+datafram <- function(meana=13, sda=2.5, meanb=75, sdb=4, n=50){
+  Type <- c(rep("Control", n), rep("Treatment", n)) 
+            Value <- c(rnorm(mean = meana, sd =sda, n=n), rnorm(mean=meanb, sd=sdb, n=n))
+            dataFram <- data.frame(Type, Value)
+            return(dataFram)
+}
+
+datafram()
+```
+
+
+```{r}
+data <- datafram()
+head(data)
+```
+
+p-value code
+```{r}
+myPval <- function(df=NULL){
+  
+  test <- aov(Value ~ Type, data=df)
+  testSummary <- summary(test)
+  p_value <- testSummary[[1]][["Pr(>F)"]][1]
+  return(p_value)
+}
+
+myPval(df=data)
+
+##################################################
+
+###### My original code 
+
+# p <- function(datframm = data){
+  # av <- aov(datframm[,2] ~ datframm[,1], data = datframm)
+    # summ <- summary(av)
+  # answer <- summ[[1]][["Pr(>F)"]][1]
+  # return(answer)
+# }
+# p()
+
+### same as posted solution without consultation 
+
+# here, I worked with Professor Ash to come up with this function. I learned that the extra [1] allows line 150 to extract the first element from the p-value vector since it is no longer in the data frame format. I also learned that I could call the columns of data I wanted to work with by index rather than the names of the columns as I did in line 148. 
+```
+Posted solution
+```{r}
+myPval(simData())
+```
+
+Running my code 
+```{r}
+p <- function(datframm = data){
+  av <- aov(datframm[,2] ~ datframm[,1], data = datframm)
+    summ <- summary(av)
+  answer <- summ[[1]][["Pr(>F)"]][1]
+  return(answer)
+}
+p()
+```
+```{r}
+p(datafram())
+```
+
+Assignment 6
+```{r}
+library(dplyr)
+data(iris)
+glimpse(iris) #or str(iris)
+
+#####################
+
+##### My code
+
+#library(tidyverse)
+#str(iris)
+#view(iris)
+
+```
+```{r}
+iris1 <- filter(iris, Species %in% c("virginica", "versicolor"), Sepal.Length > 6, Sepal.Width > 2.5)
+glimpse(iris1)
+
+###########################
+
+#### My code
+
+# data(iris)
+# iris1 <- filter(iris, Species == c("virginica", "versicolor") & Sepal.Width>2.5 & Sepal.Length>6)
+# iris1
+
+##### Analysis of my code 
+
+# here we're giving it a vector that's a different length therefore we must use the %in% operator otherwise it'll do something else. == and %in% do similar things but == must have the same vector lengths, here %in% knows one vector is of a smaller length than the other and it checks each element of species and sees if it's located in new vector and locates it that way, to use == we must seperate the 2 species via "|" or "or"
+```
+```{r}
+iris2 <- select(iris1, Species, Sepal.Length, Sepal.Width)
+glimpse(iris2)
+
+##################################
+
+####### My code
+
+# iris2 <- select(iris1, -c(Petal.Length, Petal.Width))
+# str(iris2)
+# glimpse(iris2)
+
+# same result in terms of number of columns as proper code but inaccurate number of observations due to error for iris1
+```
+```{r}
+iris3 <- arrange(iris2, desc(Sepal.Length))
+head(iris3)
+
+##########################
+
+###### My code
+
+# iris3 <- arrange(iris2, by=desc(Sepal.Length))
+# head(iris3)
+
+# correct code as answer key but inaccurate order of Sepal.Length due to error in iris1
+```
+```{r}
+iris4 <- mutate(iris3, Sepal.Area = Sepal.Length * Sepal.Width)
+glimpse(iris4)
+
+#########################
+
+#### My code 
+
+# iris4 <- mutate(iris3, Sepal.Area=Sepal.Length*Sepal.Width)
+# str(iris4)
+
+# correct code and number of variables as answer key but incorrect number of observations due to cascading error from iris1
+```
+```{r}
+irisTab <- summarize(iris4, avg.Sepal.Length = mean(Sepal.Length), avg.Sepal.Width = mean(Sepal.Width), Sample.Size = n())
+print(irisTab)
+
+#######################
+
+#### My code 
+
+# irisTab <- summarize(iris4, Average.Sepal.Length = mean(Sepal.Length), Average.Sepal.Width=mean(Sepal.Width), TotalNumber=n())
+# irisTab
+
+# same code as answer key but incorrect number of observations due to previous error 
+```
+```{r}
+. <- group_by(iris4, Species)
+iris5<- summarize(., avg.Sepal.Length = mean(Sepal.Length), avg.Sepal.Width = mean(Sepal.Width), Sample.Size = n())
+print(iris5)
+
+#######################
+
+#### My code
+
+# IrisSpecies <- group_by(iris4, Species)
+# iris5 <- summarize(IrisSpecies, Average.Sepal.Length = mean(Sepal.Length), Average.Sepal.Width=mean(Sepal.Width), TotalNumber=n())
+# print(iris5)
+
+## same code as asnwer key but incorrect data due to previous error 
+```
+```{r}
+irisFinal <- iris %>% 
+    filter(Species %in% c("virginica", "versicolor"), Sepal.Length > 6, Sepal.Width > 2.5) %>%
+    select(Species, Sepal.Length, Sepal.Width) %>%
+    arrange(desc(Sepal.Length)) %>%
+    mutate(Sepal.Area = Sepal.Length * Sepal.Width) %>%
+    group_by(Species) %>%
+    summarize(avg.Sepal.Length = mean(Sepal.Length), avg.Sepal.Width = mean(Sepal.Width), Sample.Size = n())
+
+irisFinal
+
+##########################
+
+#### My code 
+
+# irisFinal <- iris %>%
+  # filter(Species == c("virginica", "versicolor") & Sepal.Width>2.5 & Sepal.Length>6) %>%
+  # select(-c(Petal.Length, Petal.Width)) %>%
+  # arrange(by=desc(Sepal.Length)) %>%
+  # mutate(Sepal.Area=Sepal.Length*Sepal.Width) %>%
+ #  group_by(Species) %>%
+ # summarize(Average.Sepal.Length = mean(Sepal.Length), Average.Sepal.Width=mean(Sepal.Width), TotalNumber=n())
+# irisFinal
+
+# all is correct except for the first line of the piping which uses == as opposed to %in% which as mentioned before will not work here 
+# do I need to have by= in this code? 
+```
+```{r}
+iris %>% 
+    filter(Species %in% c("virginica", "versicolor"), Sepal.Length > 6, Sepal.Width > 2.5) %>%
+    select(Species, Sepal.Length, Sepal.Width) %>%
+    mutate(Sepal.Area = Sepal.Length * Sepal.Width) %>%
+    group_by(Species) %>%
+    summarize(avg.Sepal.Length = mean(Sepal.Length), avg.Sepal.Width = mean(Sepal.Width), avg.Sepal.Area = mean(Sepal.Area), Sample.Size = n()) %>%
+    arrange(desc(avg.Sepal.Area))
+
+##############
+
+### I did not modify the code to be like this but the solution makes sense 
+```
+
+2.
+```{r}
+## Set up libraries
+library(tidyverse)
+library(ggthemes)
+
+
+# Data obtained from Veysey Powell and Babbitt 2016: An experimental test of buffer utility as a technique for managing pool-breeding amphibians https://datadryad.org/stash/dataset/doi:10.5061%2Fdryad.547rp
+
+dryadData <- read.table("Data/veysey-babbitt_data_amphibians.csv", header=TRUE, sep=",", stringsAsFactors = TRUE)
+
+# glimpse(dryadData)
+# head(dryadData)
+# table(dryadData$species)
+
+dryadData$species<-factor(dryadData$species, labels=c("Spotted Salamander", "Wood Frog")) #creating 'labels' to use for the plot
+
+#class(dryadData$treatment)
+dryadData$treatment <- factor(dryadData$treatment, 
+            levels=c("Reference",
+                     "100m", "30m"))
+
+
+p<- ggplot(data=dryadData, # assinging the variable p to the function that will generate the desired plot, specifying that the data we should be working with is the Dryad data
+       aes(x=interaction(wetland, treatment), # aes() evaluates the inputs in the context of the data, specifies the x-variable 
+           y=count.total.adults, fill=factor(year))) + geom_bar(position="dodge", stat="identity", color="black") + # specifies the y-variable and fills in the bars to distinguish by year via fill(), the factor() fcn works with categorical variables to help plot them
+  # geom_bar specifies we want a bar plot, 
+  # position="dodge" preserves the vertical position of the data while  adjusting the horizontal position of the bars such that the bars don't stack on top of another and are seperated on each x-variable interval
+  # stat="identity" tells R to calculate the sum of the y-variable grouped by the x-variable and to use bars to display them, without this the code will not run because the bars have no instructions on how to properly generate
+  # color="black" tells the plot to have black-bordered columns 
+  ylab("Number of breeding adults") + # specifies the y-label for the plot
+  xlab("") + # empty () indicates no x-label for the plot is specified
+  scale_y_continuous(breaks = c(0,100,200,300,400,500)) + # specifies the interval/scale for the y-axis
+  scale_x_discrete(labels=c("30 (Ref)", "124 (Ref)", "141 (Ref)", "25 (100m)","39 (100m)","55 (100m)","129 (100m)", "7 (30m)","19 (30m)","20 (30m)","59 (30m)")) + # sepcifeies the interval/scale for the x-axis 
+  facet_wrap(~species, nrow=2, strip.position="right") + # seperates the graph into a 2-paneled graph (as indicated by nrow=2)
+  theme_few() + scale_fill_grey() + # theme for the plots overall appearance is theme_few()
+  # scale_fill_grey() indicates that grey colors should fill the bar columns rather than the rainbow colors that manifest when this line is removed (puts the colors into gray-scale)
+  theme(panel.background = element_rect(fill = 'gray94', color = 'black'), # makes the background of the graphs grayscale rather than white 
+        legend.position="top",  # puts the legend on top of the graph rather than on the side 
+        legend.title= element_blank(), axis.title.y = element_text(size=12, face="bold", colour = "black"), # Specifies there should be no title for the legend and that they y-axis title should be in black, bold, size 12 font 
+        strip.text.y = element_text(size = 10, face="bold", colour = "black"))  # let's the scale be all in one line rather than on top
+p #prints the graph 
+```
+

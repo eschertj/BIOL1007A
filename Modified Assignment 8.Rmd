@@ -1,0 +1,143 @@
+---
+title: "Modified Assignment 8"
+author: "Jack Eschert"
+date: "2023-02-03"
+output: html_document
+---
+Weekly Assignment 2
+```{r}
+set.seed(123)
+simData <- function(mean1=10, sd1=1.5, mean2=45, sd2=2, n=25){
+  
+  Type <- rep(c("Control", "Treatment"), each = n)
+  Value <- c(rnorm(n, mean = mean1, sd = sd1), rnorm(n, mean = mean2, sd = sd2))
+  dframe <- data.frame(Type, Value)
+  return(dframe)
+}
+
+data<-simData()
+
+head(data)
+
+#############################################################################
+
+####### My code 
+
+##### My original thought process
+
+#library(tidyverse)
+#cont <- "Control"
+#type1 <- rep(cont, 25)
+#type1
+#treat <- "Treatment"
+#type2 <- rep(treat, 25)
+#type2
+#Type <- c(type1, type2)
+#Type
+
+#valu1 <- rnorm(n=25, mean=10, sd=1.5)
+#valu1
+#valu2 <- rnorm(n=25, mean=45, sd=2)
+#valu2
+#Value <- c(valu1, valu2)
+#Value
+
+#dataFrame <- data.frame(Type, Value)
+#dataFrame
+
+####### My Final working function 
+#set.seed(33)
+#datafram <- function(meana=10, sda=1.5, meanb=45, sdb=2, n=25){
+  #Type <- c(rep("Control", n), rep("Treatment", n)) 
+            #Value <- c(rnorm(mean = meana, sd =sda, n=n), rnorm(mean=meanb, sd=sdb, n=n))
+            #dataFram <- data.frame(Type, Value)
+            #return(dataFram)
+#}
+
+#datafram()
+
+#data <- datafram()
+#head(data)
+
+
+#######################################
+
+##### Analysis of my Code
+
+## NOTE: I struggled alot with Weekly Assignment 2 and consulted both Professor Ash during her office hours and the posted solutions (with her permission) since my original code did not even run, thus the reflection process will not be as rich as that for Assignment 6
+
+# my code is nearly identical to the posted solution because I worked with Professor Ash and the posted solution to reach a functioning code 
+```
+
+Running my code with new mean values
+```{r}
+set.seed(245)
+datafram <- function(meana=13, sda=2.5, meanb=75, sdb=4, n=50){
+  Type <- c(rep("Control", n), rep("Treatment", n)) 
+            Value <- c(rnorm(mean = meana, sd =sda, n=n), rnorm(mean=meanb, sd=sdb, n=n))
+            dataFram <- data.frame(Type, Value)
+            return(dataFram)
+}
+
+datafram()
+```
+
+
+```{r}
+data <- datafram()
+head(data)
+```
+
+p-value code
+```{r}
+myPval <- function(df=NULL){
+  
+  test <- aov(Value ~ Type, data=df)
+  testSummary <- summary(test)
+  p_value <- testSummary[[1]][["Pr(>F)"]][1]
+  return(p_value)
+}
+
+myPval(df=data)
+
+##################################################
+
+###### My original code 
+
+# p <- function(datframm = data){
+  # av <- aov(datframm[,2] ~ datframm[,1], data = datframm)
+    # summ <- summary(av)
+  # answer <- summ[[1]][["Pr(>F)"]][1]
+  # return(answer)
+# }
+# p()
+```
+```{r}
+myPval(simData())
+```
+
+
+
+Running my code 
+```{r}
+p <- function(datframm = data){
+  av <- aov(datframm[,2] ~ datframm[,1], data = datframm)
+    summ <- summary(av)
+  answer <- summ[[1]][["Pr(>F)"]][1]
+  return(answer)
+}
+p()
+```
+```{r}
+p(datafram())
+```
+
+Assignment 6
+```{r}
+library(dplyr)
+data(iris)
+glimpse(iris) #or str(iris)
+
+###### 
+```
+

@@ -22,6 +22,7 @@ iris1
 
 # correct code:
 
+
 ```
 
 ```{r}
@@ -54,6 +55,7 @@ irisTab <- summarize(iris4, Average.Sepal.Length = mean(Sepal.Length), Average.S
 irisTab
 
 # same code as answer key but incorrect number of observations due to previous error 
+
 
 ```
 
@@ -187,7 +189,7 @@ dryadData$treatment <- factor(dryadData$treatment,
 
 p<- ggplot(data=dryadData, # assinging the variable p to the function that will generate the desired plot, specifying that the data we should be working with is the Dryad data
        aes(x=interaction(wetland, treatment), # aes() evaluates the inputs in the context of the data, specifies the x-variable 
-           y=count.total.adults, fill=factor(year))) + geom_bar(position="dodge", stat="identity", color="black") + # specifies the y-variable and fills in the bars to distinguinsh by year via fill(), the factor() fcn works with categorical variables to help plot them
+           y=count.total.adults, fill=factor(year))) + geom_bar(position="dodge", stat="identity", color="black") + # specifies the y-variable and fills in the bars to distinguish by year via fill(), the factor() fcn works with categorical variables to help plot them
   # geom_bar specifies we want a bar plot, 
   # position="dodge" preserves the vertical position of the data while  adjusting the horizontal position of the bars, 
   # stat="identity" tells R to calculate the sum of the y-variable grouped by the x-variable and to use bars to display them
@@ -199,8 +201,9 @@ p<- ggplot(data=dryadData, # assinging the variable p to the function that will 
   facet_wrap(~species, nrow=2, strip.position="right") + 
   theme_few() + scale_fill_grey() + # theme for the plots overall appearance is them_few()
   # scale_fill_grey() indicates that grey colors should fill the bar columns 
-  theme(panel.background = element_rect(fill = 'gray94', color = 'black'), legend.position="top",  legend.title= element_blank(), axis.title.y = element_text(size=12, face="bold", colour = "black"), strip.text.y = element_text(size = 10, face="bold", colour = "black")) + 
-  guides(fill=guide_legend(nrow=1,byrow=TRUE)) 
+  theme(panel.background = element_rect(fill = 'gray94', color = 'black'), # elements about the 
+        legend.position="top",  legend.title= element_blank(), axis.title.y = element_text(size=12, face="bold", colour = "black"), 
+        strip.text.y = element_text(size = 10, face="bold", colour = "black"))  # let's the scale be all in one line rather than on top
 
 p
 ```
