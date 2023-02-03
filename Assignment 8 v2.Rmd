@@ -279,6 +279,7 @@ iris %>%
 
 2.
 ```{r}
+
 ## Set up libraries
 library(tidyverse)
 library(ggthemes)
@@ -317,7 +318,8 @@ p<- ggplot(data=dryadData, # assinging the variable p to the function that will 
   theme(panel.background = element_rect(fill = 'gray94', color = 'black'), # makes the background of the graphs grayscale rather than white 
         legend.position="top",  # puts the legend on top of the graph rather than on the side 
         legend.title= element_blank(), axis.title.y = element_text(size=12, face="bold", colour = "black"), # Specifies there should be no title for the legend and that they y-axis title should be in black, bold, size 12 font 
-        strip.text.y = element_text(size = 10, face="bold", colour = "black"))  # let's the scale be all in one line rather than on top
+        # The line below makes the Species Labels bold 
+        strip.text.y = element_text(size = 10, face="bold", colour = "black")) + guides(fill=guide_legend(nrow=1,byrow=TRUE)) # lets the legend be all in one line rather than on top
 p #prints the graph 
 ```
 
