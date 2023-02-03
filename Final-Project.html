@@ -69,14 +69,14 @@ code span.ot { color: #007020; }
 <div id="project-overview-and-rationale" class="section level1">
 <h1><strong>Project Overview and Rationale:</strong></h1>
 <p>For my final project, I created a personal portfolio webpage that
-could act as a supplement to my LinkedIn and Résumé. This webpage is
-unique from these two aforementioed items because it showcases my
-personality through the color scheme and the pictures/fun facts that
-could only be gleaned during an interview. The primary reason I made
-this webpage is because I found it increasingly more difficult for a
-one-page résumé to fully highlight the extent of my work and my sound
-candidacy for a position. In particular, a printed résumé cannot
-concisely present the details of my publications and a LinkedIn profile
+could act as a supplement to my LinkedIn profile and Résumé. This
+webpage is unique from these two aforementioned items because it
+showcases my personality through the color scheme and the pictures/fun
+facts that could only be gleaned during an interview. The primary reason
+I made this webpage is because I found it increasingly more difficult
+for a one-page résumé to fully highlight the extent of my work and my
+sound candidacy for a position. In particular, a printed résumé cannot
+concisely present the details of my publications, and a LinkedIn profile
 offers only a fixed template with little room for creativity. Through
 the work we’ve engaged in during BIOL 1007A, I saw the perfect
 opportunity to create a meaningful product.</p>
@@ -92,22 +92,26 @@ R markdown document, I began to look for ways to enhance the flow or
 appearance of it</li>
 <li>I consulted Professor Ash, who recommended the
 <code>rmdformats</code> package: this package offers themes for GitHub
-webpages with more advanced features such as a sidebar panel for section
-headers</li>
+webpages that include more advanced features such as a sidebar panel for
+section headers</li>
 <li>I elected to pursue the <code>rmdformats</code> package rather than
 the <code>Jekyll: Feeling Responsive</code> theme because the Jekyll
 theme required too much <code>HTML</code> processing and I was
 encountering roadblocks</li>
 <li>Once I created the structure for my webpage, I sought opportunities
 to enhance the <code>readthedown</code> theme from
-<code>rmdformats</code> — first, by creating individual R Markdown pages
-that could tab away upon clicking rather than tabbing to that particular
-section</li>
+<code>rmdformats</code></li>
+<li>I ultimately created 3 individual R Markdown pages that could be
+opened in a new tab upon being clicked (rather than including this
+information under section headers) because I did not want to clutter the
+main page of my website with too much information</li>
+<li>Apart from these pages, I did include 3 section headers with
+information included underneath them on the main page</li>
 <li>I wanted to have all the section headers tab away to a separate
 webpage, but after consulting Professor Ash and Stack Overflow I
 discovered this wasn’t feasible and proceeded with modifying
 <code>readthedown</code> [Resource 1]</li>
-<li>To make the webpage look more aesthetically pleasing I utilized
+<li>To make my webpage look more aesthetically pleasing I utilized
 various formats from the <code>prettydoc</code> package: in particular,
 <code>cayman</code>, <code>tactile</code>, and <code>architect</code>
 [Resource 2]</li>
@@ -116,20 +120,22 @@ colors: this was accomplished by creating a <code>custom.css</code> file
 in the <code>css</code> file format, which was specified in the
 <code>output</code> section of the R Markdown file</li>
 <li>I consulted [Resource 3] for the 6-character hexadecimal color codes
-to choose which colors I wanted to use</li>
+to choose which colors I wanted to use for my webpage</li>
 <li>Apart from aesthetics, I also wanted to mimic the effects of a more
 sophisticated website: so, I consulted with Professor Ash and Stack
-Overflow to discover <code>HTML</code> code for a <code>Read More</code>
+Overflow to find <code>HTML</code> code for a <code>Read More</code>
 drop down option for larger bodies of text, as seen in my
 <code>Snapshots of my Work</code> panel [Resource 4]</li>
 <li>The major issue I encountered with this code was that it didn’t work
-when I had <code>prettydoc</code> running, we both scoured Stack
-Overflow and various blogs and couldn’t find a solution. Thus, my
-<code>Snapshots of my Work</code> section is very bare</li>
+when I had <code>prettydoc</code> running, Professor Ash and I both
+scoured Stack Overflow and various blogs, but couldn’t find a solution.
+Thus, my <code>Snapshots of my Work</code> section appears very bare
+bones</li>
 <li>However, I did learn that if you click the <code>gear icon</code>,
-then <code>Output Options</code>, you can minimally modify the theme of
-the R Markdown document, although the effect primarily manifests in the
-font style and size as opposed to the color scheme</li>
+followed by <code>Output Options</code> on an R Markdown page, you can
+minimally modify the theme of the document, although the effect
+primarily manifest in the font style and size as opposed to the page’s
+color scheme</li>
 <li>In addition to various pictures of my work at the hospital, I
 utilized the <code>vembeder</code> package to embed a YouTube video of
 my recent presentation at the PGA76 Medical Research Conference in NYC.
@@ -139,10 +145,11 @@ this package [Resource 5]</li>
 the YouTube <code>Share</code> feature, but R Markdown did not process
 this code well, so I sought an existing function within R to accomplish
 the job</li>
-<li>I used the ```<code>{r echo=FALSE}</code> command within Markdown to
-prevent this code from being Knitted into my final PDF</li>
-<li>After completing these steps, I modified the flow, orignaization,
-and color-scheme of my website to suit my personal preference before
+<li>I used the ```<code>{r echo=FALSE}</code> command within the R chunk
+of my R Markdown document to prevent this code from being Knitted into
+my final PDF</li>
+<li>After completing these steps, I modified the flow, organization, and
+color-scheme of my website to suit my personal preference before
 publishing it online</li>
 </ul>
 </div>

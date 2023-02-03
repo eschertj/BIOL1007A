@@ -12,27 +12,29 @@ output:
 
 # **Project Overview and Rationale:**
 
-For my final project, I created a personal portfolio webpage that could act as a supplement to my LinkedIn and Résumé. This webpage is unique from these two aforementioed items because it showcases my personality through the color scheme and the pictures/fun facts that could only be gleaned during an interview. The primary reason I made this webpage is because I found it increasingly more difficult for a one-page résumé to fully highlight the extent of my work and my sound candidacy for a position. In particular, a printed résumé cannot concisely present the details of my publications and a LinkedIn profile offers only a fixed template with little room for creativity. Through the work we've engaged in during BIOL 1007A, I saw the perfect opportunity to create a meaningful product. 
+For my final project, I created a personal portfolio webpage that could act as a supplement to my LinkedIn profile and Résumé. This webpage is unique from these two aforementioned items because it showcases my personality through the color scheme and the pictures/fun facts that could only be gleaned during an interview. The primary reason I made this webpage is because I found it increasingly more difficult for a one-page résumé to fully highlight the extent of my work and my sound candidacy for a position. In particular, a printed résumé cannot concisely present the details of my publications, and a LinkedIn profile offers only a fixed template with little room for creativity. Through the work we've engaged in during BIOL 1007A, I saw the perfect opportunity to create a meaningful product. 
 
 ## *Overview of Steps*
 
 * I consulted my work on Weekly Assignment 1 to inform how to create a GitHub webpage from an R Markdown document
 * I took the existing text and descriptors from my LinkedIn profile and modified them to fit the tone of the website 
 * After transferring the major sections of my LinkedIn profile to the R markdown document, I began to look for ways to enhance the flow or appearance of it 
-* I consulted Professor Ash, who recommended the `rmdformats` package: this package offers themes for GitHub webpages with more advanced features such as a sidebar panel for section headers
+* I consulted Professor Ash, who recommended the `rmdformats` package: this package offers themes for GitHub webpages that include more advanced features such as a sidebar panel for section headers
 * I elected to pursue the `rmdformats` package rather than the `Jekyll: Feeling Responsive` theme because the Jekyll theme required too much `HTML` processing and I was encountering roadblocks
-* Once I created the structure for my webpage, I sought opportunities to enhance the `readthedown` theme from `rmdformats` — first, by creating individual R Markdown pages that could tab away upon clicking rather than tabbing to that particular section
+* Once I created the structure for my webpage, I sought opportunities to enhance the `readthedown` theme from `rmdformats`
+* I ultimately created 3 individual R Markdown pages that could be opened in a new tab upon being clicked (rather than including this information under section headers) because I did not want to clutter the main page of my website with too much information
+* Apart from these pages, I did include 3 section headers with information included underneath them on the main page
 * I wanted to have all the section headers tab away to a separate webpage, but after consulting Professor Ash and Stack Overflow I discovered this wasn't feasible and proceeded with modifying `readthedown` [Resource 1]
-* To make the webpage look more aesthetically pleasing I utilized various formats from the `prettydoc` package: in particular, `cayman`, `tactile`, and `architect` [Resource 2]
+* To make my webpage look more aesthetically pleasing I utilized various formats from the `prettydoc` package: in particular, `cayman`, `tactile`, and `architect` [Resource 2]
 * I also consulted Professor Ash on how to customize my webpage's colors: this was accomplished by creating a `custom.css` file in the `css` file format, which was specified in the `output` section of the R Markdown file
-* I consulted [Resource 3] for the 6-character hexadecimal color codes to choose which colors I wanted to use 
-* Apart from aesthetics, I also wanted to mimic the effects of a more sophisticated website: so, I consulted with Professor Ash and Stack Overflow to discover `HTML` code for a `Read More` drop down option for larger bodies of text, as seen in my `Snapshots of my Work` panel [Resource 4]
-* The major issue I encountered with this code was that it didn't work when I had `prettydoc` running, we both scoured Stack Overflow and various blogs and couldn't find a solution. Thus, my `Snapshots of my Work` section is very bare
-* However, I did learn that if you click the `gear icon`, then `Output Options`, you can minimally modify the theme of the R Markdown document, although the effect primarily manifests in the font style and size as opposed to the color scheme 
+* I consulted [Resource 3] for the 6-character hexadecimal color codes to choose which colors I wanted to use for my webpage
+* Apart from aesthetics, I also wanted to mimic the effects of a more sophisticated website: so, I consulted with Professor Ash and Stack Overflow to find `HTML` code for a `Read More` drop down option for larger bodies of text, as seen in my `Snapshots of my Work` panel [Resource 4]
+* The major issue I encountered with this code was that it didn't work when I had `prettydoc` running, Professor Ash and I both scoured Stack Overflow and various blogs, but couldn't find a solution. Thus, my `Snapshots of my Work` section appears very bare bones
+* However, I did learn that if you click the `gear icon`, followed by `Output Options` on an R Markdown page, you can minimally modify the theme of the document, although the effect primarily manifest in the font style and size as opposed to the page's color scheme 
 * In addition to various pictures of my work at the hospital, I utilized the `vembeder` package to embed a YouTube video of my recent presentation at the PGA76 Medical Research Conference in NYC. I first had to upload the video footage onto YouTube and then utilize this package [Resource 5]
 * Originally, I tried to use the `HTML` code provided by the YouTube `Share` feature, but R Markdown did not process this code well, so I sought an existing function within R to accomplish the job
-* I used the ````{r echo=FALSE}` command within Markdown to prevent this code from being Knitted into my final PDF
-* After completing these steps, I modified the flow, orignaization, and color-scheme of my website to suit my personal preference before publishing it online 
+* I used the ````{r echo=FALSE}` command within the R chunk of my R Markdown document to prevent this code from being Knitted into my final PDF
+* After completing these steps, I modified the flow, organization, and color-scheme of my website to suit my personal preference before publishing it online 
 
 
 # **Resources**
