@@ -78,6 +78,9 @@ output: html_document
   + git status (selected files should turn green after being red)
   + git commit -am "insert a message you'd like for bookeeping purposes on GitHub here"
   + git push 
-2. Your website will have the following format: YourGitHubUsername.github.io/RepositoryName/
-3. You're done, enjoy your website! 
+2. Head back to GitHub and click Settings under your repository name 
+  + Select the Pages tab on the left-hand sidebar
+  + Under Source select "Deploy from a Main Branch" and under Branch select "Main" from the first of the three tab options there
+3. Your website will have the following format: YourGitHubUsername.github.io/RepositoryName/
+4. You're done, enjoy your website! 
 
